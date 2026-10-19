@@ -1,0 +1,19 @@
+{
+  "URL": "https://www.automationexercise.com/",
+  "login": {
+    "validData": {
+      "username": "your.email@example.com",
+      "password": "YourPassword123"
+    },
+    "invalidData": {
+      "invalidUsername": {
+        "username": "wrong@mail.com",
+        "password": "YourPassword123"
+      },
+      "invalidPassword": {
+        "username": "your.email@example.com",
+        "password": "wrong_password"
+      }
+    }
+  }
+}
