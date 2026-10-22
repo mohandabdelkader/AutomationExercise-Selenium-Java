@@ -1,6 +1,10 @@
 package data;
 
 public class Login {
-    public ValidData validData;
+    private ValidData validData;
     public InvalidData invalidData;
+
+    public ValidData getValidData() {
+        return validData;
+    }
 }

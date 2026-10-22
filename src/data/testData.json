@@ -1,5 +1,5 @@
 {
-  "URL": "https://www.automationexercise.com/",
+  "URL": "https://demo.nopcommerce.com/",
   "login": {
     "validData": {
       "username": "your.email@example.com",
@@ -15,5 +15,19 @@
         "password": "wrong_password"
       }
     }
-  }
+  },
+  "login1": [
+    [
+      "mohand.123@gmail.com",
+      "pass@147258"
+    ],
+    [
+      "mohand.789@gmail.com",
+      "Pas789"
+    ],
+    [
+      "mohand.000@gmail.com",
+      "Pass000000"
+    ]
+  ]
 }

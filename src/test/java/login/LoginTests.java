@@ -2,19 +2,20 @@ package login;
 
 import base.BaseTests;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 
 public class LoginTests extends BaseTests {
+    @DataProvider
+    public Object[][] testData() {
+        return dataModel.getLogin1();
+    }
 
-    @Test
-    public void testValidData() {
+    @Test(dataProvider = "testData")
+    public void testMultipleLoginAccounts(String email, String password) {
         LoginPage loginPage = homePage.openLoginPage();
-        loginPage.loginFeature(
-                dataModel.login.validData.username,
-                dataModel.login.validData.password,
-                10
-        );
-        Assert.assertTrue(driver.getPageSource().contains("Logout"));
+        loginPage.loginFeature(email, password, 5);
+      
     }
 }

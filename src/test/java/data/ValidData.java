@@ -1,6 +1,14 @@
 package data;
 
 public class ValidData {
-    public String username;
-    public String password;
+    private String username;
+    private String password;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }

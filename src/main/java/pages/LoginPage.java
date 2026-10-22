@@ -6,9 +6,9 @@ import utils.MethodHandles;
 
 public class LoginPage extends MethodHandles {
 
-    private final By emailField = By.cssSelector("[data-qa='login-email']");
-    private final By passwordField = By.cssSelector("[data-qa='login-password']");
-    private final By loginBtn = By.cssSelector("[data-qa='login-button']");
+    private final By emailField = By.id("Email");
+    private final By passwordField = By.id("Password");
+    private final By loginBtn = By.cssSelector(".button-1.login-button");
 
     public LoginPage(WebDriver driver) {
         super(driver);
