@@ -16,4 +16,5 @@ public class ItemInformationPage extends MethodHandles {
     public void clickOnAddToCartBtn() {
         click(addToCartBtn, 5);
     }
+
 }

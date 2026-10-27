@@ -1,22 +1,26 @@
 package data;
 
+import data.login.LoginDataModel;
+import data.register.RegisterDataModel;
+
 public class DataModel {
     private String URL;
-    private Login login;
-    private Object[][] login1;
+    private LoginDataModel login;
+    private RegisterDataModel register;
+
     // Getter
     public String getUrl() {
         return URL;
     }
-
-    public Login getLogin() {
+// Login Getter
+    public LoginDataModel getLogin() {
         return login;
     }
 
-    public Object[][] getLogin1() {
-        return login1;
+    public RegisterDataModel getRegister() {
+        return register;
     }
 
-}
 
+}
 

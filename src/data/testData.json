@@ -2,32 +2,68 @@
   "URL": "https://demo.nopcommerce.com/",
   "login": {
     "validData": {
-      "username": "your.email@example.com",
-      "password": "YourPassword123"
+      "testCase": "valid login",
+      "email": "mohandabdelkader@gmail.com",
+      "password": "Pas01201518114@",
+      "expectedResult": ".ico-logout"
     },
-    "invalidData": {
-      "invalidUsername": {
-        "username": "wrong@mail.com",
-        "password": "YourPassword123"
+    "invalidData": [
+      {
+        "testCase": "Invalid Email Format",
+        "email": "invalid_email_format",
+        "password": "pass@147258",
+        "expectedMessage": "Please enter a valid email address."
       },
-      "invalidPassword": {
-        "username": "your.email@example.com",
-        "password": "wrong_password"
+      {
+        "testCase": "Incorrect Password",
+        "email": "mohandabdelkader@gmail.com",
+        "password": "WrongPassword123",
+        "expectedMessage": "Login was unsuccessful"
       }
-    }
-  },
-  "login1": [
-    [
-      "mohand.123@gmail.com",
-      "pass@147258"
-    ],
-    [
-      "mohand.789@gmail.com",
-      "Pas789"
-    ],
-    [
-      "mohand.000@gmail.com",
-      "Pass000000"
     ]
-  ]
+  },
+  "register": {
+    "validData": {
+      "testCase": "Valid Registration",
+      "Gender": "Male",
+      "FirstName": "mohand",
+      "LastName": "abdelkader",
+      "Email": "mohand123@gmail.com",
+      "Password": "Pas01201518114@",
+      "ConfirmPassword": "Pas01201518114@",
+      "expectedMessage": "Your registration completed"
+    },
+    "invalidData": [
+      {
+        "testCase": "Password Mismatch",
+        "Gender": "Male",
+        "FirstName": "mohand",
+        "LastName": "abdelkader",
+        "Email": "mohand123@gmail.com",
+        "Password": "Pas01201518114@",
+        "ConfirmPassword": "DifferentPassword123",
+        "expectedMessage": "The password and confirmation password do not match."
+      },
+      {
+        "testCase": "Empty Required Fields",
+        "Gender": "",
+        "FirstName": "",
+        "LastName": "",
+        "Email": "",
+        "Password": "",
+        "ConfirmPassword": "",
+        "expectedMessage": "First name is required."
+      },
+      {
+        "testCase": "email already exists",
+        "Gender": "female",
+        "FirstName": "mohand",
+        "LastName": "abdelkader",
+        "Email": "mohand123@gmail.com",
+        "Password": "123456789",
+        "ConfirmPassword": "123456789",
+        "expectedMessage": "The specified email already exists"
+      }
+    ]
+  }
 }
