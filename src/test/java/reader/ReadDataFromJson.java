@@ -11,7 +11,7 @@ public class ReadDataFromJson {
     public DataModel readJsonFile() throws FileNotFoundException {
         try {
             FileReader reader = new FileReader("src/data/testData.json");
-           return new Gson().fromJson(reader, DataModel.class);
+            return new Gson().fromJson(reader, DataModel.class);
 
         } catch (Exception e) {
             throw new RuntimeException(e);

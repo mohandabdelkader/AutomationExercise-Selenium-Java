@@ -12,6 +12,8 @@ public class HomePage extends MethodHandles {
     private final By desktopLink = By.cssSelector("a[href='/desktops']");
     private final By shoppingCartLink = By.cssSelector(".cart-label");
     private final By registerLink = By.linkText("Register");
+    private final By apparelLink = By.linkText("Apparel");
+    private final By shoesLink = By.xpath("//a[@href='/shoes' and text()='Shoes']");
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -39,6 +41,12 @@ public class HomePage extends MethodHandles {
     public RegisterPage openRegisterLink(int time) {
         click(registerLink, time);
         return new RegisterPage(driver);
+    }
+
+    public ShoesPage clickOnApparelLink(int time) {
+        hover(apparelLink, time);
+        click(shoesLink, time);
+        return new ShoesPage(driver);
     }
 
 }

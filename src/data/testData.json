@@ -65,5 +65,58 @@
         "expectedMessage": "The specified email already exists"
       }
     ]
+  },
+  "shoesCustomization": {
+    "validData": [
+      {
+        "testCase": "Customize Shoe 1",
+        "size": "8",
+        "color": "White/Black",
+        "print": "print1",
+        "expectedResult": "The product has been added to your shopping cart"
+      },
+      {
+        "testCase": "Customize Shoe 2",
+        "size": "9",
+        "color": "White/Blue",
+        "print": "print2",
+        "expectedResult": "The product has been added to your shopping cart"
+      },
+      {
+        "testCase": "Customize Shoe 3",
+        "size": "10",
+        "color": "White/Black",
+        "print": "print1",
+        "expectedResult": "The product has been added to your shopping cart"
+      },
+      {
+        "testCase": "Customize Shoe 3",
+        "size": "11",
+        "color": "White/Blue",
+        "print": "print2",
+        "expectedResult": "The product has been added to your shopping cart"
+      }
+    ]
+  },
+  "clothingCustomization": {
+    "validData": [
+      {
+        "testCase": "Customize T-Shirt with Valid Text",
+        "enterText": "Mohand Abdelkader",
+        "expectedResult": "The product has been added to your shopping cart"
+      },
+      {
+        "testCase": "Customize T-Shirt with Short Slogan",
+        "enterText": "Automation",
+        "expectedResult": "The product has been added to your shopping cart"
+      }
+    ],
+    "invalidData": [
+      {
+        "testCase": "Customize T-Shirt with Empty Input",
+        "enterText": "",
+        "expectedMessage": "Please enter custom text"
+      }
+    ]
   }
 }

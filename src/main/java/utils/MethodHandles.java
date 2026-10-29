@@ -1,6 +1,7 @@
 package utils;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -14,6 +15,7 @@ public class MethodHandles {
     protected WebDriverWait wait;
     protected WebDriver driver;
     Actions actions;
+    Select select;
 
     public MethodHandles(WebDriver driver) {
         this.driver = driver;
@@ -44,11 +46,22 @@ public class MethodHandles {
         actions.moveToElement(webElement(locator, time)).build().perform();
     }
 
+    public void selectByVisibleText(By locator, int time, String text) {
+        select = new Select(webElement(locator, time));
+        select.selectByVisibleText(text);
+    }
+
+    public void scrollToElement(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
     // Notification
     private static final By successNotification = By.cssSelector(".bar-notification.success");
 
-    public void assertNotificationContains(String expectedText, int time) {
+    public String assertNotificationContains(String expectedText, int time) {
         assertNotificationContains(expectedText, successNotification, time);
+        return expectedText;
     }
 
     public void assertNotificationContains(String expectedText, By notificationLocator, int time) {
