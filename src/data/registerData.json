@@ -1,0 +1,44 @@
+{
+  "validDataRegister": {
+    "testCase": "Valid Registration",
+    "Gender": "Male",
+    "FirstName": "mohand",
+    "LastName": "abdelkader",
+    "Email": "mohand123@gmail.com",
+    "Password": "Pas01201518114@",
+    "ConfirmPassword": "Pas01201518114@",
+    "expectedMessage": "Your registration completed"
+  },
+  "invalidDataRegister": [
+    {
+      "testCase": "Password Mismatch",
+      "Gender": "Male",
+      "FirstName": "mohand",
+      "LastName": "abdelkader",
+      "Email": "mohand123@gmail.com",
+      "Password": "Pas01201518114@",
+      "ConfirmPassword": "DifferentPassword123",
+      "expectedMessage": "The password and confirmation password do not match."
+    },
+    {
+      "testCase": "Empty Required Fields",
+      "Gender": "",
+      "FirstName": "",
+      "LastName": "",
+      "Email": "",
+      "Password": "",
+      "ConfirmPassword": "",
+      "expectedMessage": "First name is required."
+    },
+    {
+      "testCase": "email already exists",
+      "Gender": "female",
+      "FirstName": "mohand",
+      "LastName": "abdelkader",
+      "Email": "mohand123@gmail.com",
+      "Password": "123456789",
+      "ConfirmPassword": "123456789",
+      "expectedMessage": "The specified email already exists"
+    }
+  ]
+}

@@ -1,14 +1,14 @@
-package data.register;
+package data.registerDataModel;
 
-public class InValidRegisterDataModel {
-    private String testCase;
-    private String Gender;
-    private String FirstName;
-    private String LastName;
-    private String Email;
-    private String Password;
-    private String ConfirmPassword;
-    private String expectedMessage;
+public class BaseRegisterData {
+    protected String testCase;
+    protected String Gender;
+    protected String FirstName;
+    protected String LastName;
+    protected String Email;
+    protected String Password;
+    protected String ConfirmPassword;
+    protected String expectedMessage;
 
     public String getTestCase() {
         return testCase;

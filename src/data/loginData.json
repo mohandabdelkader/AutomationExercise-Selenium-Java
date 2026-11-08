@@ -1,0 +1,22 @@
+{
+  "validDataLogin": {
+    "testCase": "valid login",
+    "email": "mohandabdelkader@gmail.com",
+    "password": "Pas01201518114@",
+    "expectedResult": ".ico-logout"
+  },
+  "invalidDataLogin": [
+    {
+      "testCase": "Invalid Email Format",
+      "email": "invalid_email_format",
+      "password": "pass@147258",
+      "expectedMessage": "Please enter a valid email address."
+    },
+    {
+      "testCase": "Incorrect Password",
+      "email": "mohandabdelkader@gmail.com",
+      "password": "WrongPassword123",
+      "expectedMessage": "Login was unsuccessful. Please correct the errors and try again."
+    }
+  ]
+}

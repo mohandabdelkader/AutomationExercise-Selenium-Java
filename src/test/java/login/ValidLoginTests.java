@@ -1,22 +1,23 @@
 package login;
 
 import base.BaseTests;
-import data.login.ValidDataModel;
+import data.loginDataModel.ValidDataLogin;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import reader.TestDataManger;
 
-public class LoginDataModelValidDataModelTests extends BaseTests {
+public class ValidLoginTests extends BaseTests {
 
     @DataProvider(name = "validLoginDataProvider")
     public Object[][] getValidLoginData() {
-        ValidDataModel validDataModel = dataModel.getLogin().getValidData();
+        ValidDataLogin validDataLogin = TestDataManger.getLoginData().getValidData();
         return new Object[][]{
                 {
-                        validDataModel.getTestCase(),
-                        validDataModel.getEmail(),
-                        validDataModel.getPassword(),
-                        validDataModel.getExpectedResult()
+                        validDataLogin.getTestCase(),
+                        validDataLogin.getEmail(),
+                        validDataLogin.getPassword(),
+                        validDataLogin.getExpectedResult()
                 }
         };
     }

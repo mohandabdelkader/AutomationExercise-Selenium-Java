@@ -9,8 +9,8 @@ public class LoginPage extends MethodHandles {
     private final By emailField = By.id("Email");
     private final By passwordField = By.id("Password");
     private final By loginBtn = By.cssSelector(".button-1.login-button");
-    private final By emailFormatError = By.cssSelector("span.field-validation-error[data-valmsg-for='Email']");
-    private final By loginFailureSummary = By.cssSelector(".message-error");
+    private final By emailFormatError = By.id("Email-error");
+    private final By loginMessageError = By.cssSelector(".message-error.validation-summary-errors");
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -21,11 +21,13 @@ public class LoginPage extends MethodHandles {
         sendKeys(password, passwordField, time);
         click(loginBtn, time);
     }
+
     public String getEmailFormatErrorMessage(int time) {
         return webElement(emailFormatError, time).getText();
     }
 
-    public String getGeneralErrorMessage(int time) {
-        return webElement(loginFailureSummary, time).getText();
+    public String getLoginMessageError(int time) {
+
+        return webElement(loginMessageError, time).getText();
     }
 }

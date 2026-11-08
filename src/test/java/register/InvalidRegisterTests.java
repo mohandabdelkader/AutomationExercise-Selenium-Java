@@ -1,19 +1,20 @@
 package register;
-
 import base.BaseTests;
-import data.register.InValidRegisterDataModel;
+import data.registerDataModel.InvalidDataRegister;
+import data.registerDataModel.RegisterModel;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.RegisterPage;
+import reader.TestDataManger;
 
 import java.util.List;
 
-public class InvalidDataRegisterTests extends BaseTests {
+public class InvalidRegisterTests extends BaseTests {
 
     @DataProvider
     public Object[][] getInvalidData() {
-        List<InValidRegisterDataModel> invalidRows = dataModel.getRegister().getInvalidData();
+        List<InvalidDataRegister> invalidRows = TestDataManger.getRegisterData().getInvalidDataRegister();
         Object[][] data = new Object[invalidRows.size()][8];
 
         for (int i = 0; i < invalidRows.size(); i++) {

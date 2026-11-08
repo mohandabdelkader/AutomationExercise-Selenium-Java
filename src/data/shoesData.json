@@ -1,0 +1,32 @@
+{
+  "validShoesData": [
+    {
+      "testCase": "Customize Shoe 1",
+      "size": "8",
+      "color": "White/Black",
+      "print": "print1",
+      "expectedResult": "The product has been added to your shopping cart"
+    },
+    {
+      "testCase": "Customize Shoe 2",
+      "size": "9",
+      "color": "White/Blue",
+      "print": "print2",
+      "expectedResult": "The product has been added to your shopping cart"
+    },
+    {
+      "testCase": "Customize Shoe 3",
+      "size": "10",
+      "color": "White/Black",
+      "print": "print1",
+      "expectedResult": "The product has been added to your shopping cart"
+    },
+    {
+      "testCase": "Customize Shoe 3",
+      "size": "11",
+      "color": "White/Blue",
+      "print": "print2",
+      "expectedResult": "The product has been added to your shopping cart"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
-package data.shoesItem;
+package data.shoesDataModel;
 
-public class ShoesItemDataModel {
+public class ValidShoesData {
     private String testCase;
     private String size;
     private String color;

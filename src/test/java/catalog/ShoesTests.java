@@ -1,12 +1,12 @@
 package catalog;
 
 import base.BaseTests;
-import data.DataModel;
-import data.shoesItem.ShoesItemDataModel;
+import data.shoesDataModel.ValidShoesData;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.ShoesPage;
+import reader.TestDataManger;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class ShoesTests extends BaseTests {
     @DataProvider
     public Object[][] getShoesDataOption() {
 
-        List<ShoesItemDataModel> shoesItemDataModels = dataModel.getShoesCustomization().getValidData();
+        List<ValidShoesData> shoesItemDataModels = TestDataManger.getShoesData().getValidShoesData();
         Object[][] data = new Object[shoesItemDataModels.size()][5];
         for (int i = 0; i < shoesItemDataModels.size(); i++) {
             data[i][0] = shoesItemDataModels.get(i).getTestCase();

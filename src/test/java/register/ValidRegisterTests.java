@@ -1,23 +1,24 @@
 package register;
 
 import base.BaseTests;
-import data.register.ValidRegisterDataModel;
+import data.registerDataModel.ValidDataRegister;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.RegisterPage;
+import reader.TestDataManger;
 
-public class ValidDataRegisterTests extends BaseTests {
+public class ValidRegisterTests extends BaseTests {
     @DataProvider
     public Object[][] getValidDataRegister() {
-        ValidRegisterDataModel validRegisterDataModel = dataModel.getRegister().getValidData();
+        ValidDataRegister validDataRegister = TestDataManger.getRegisterData().getValidDataRegister();
         return new Object[][]{
-                {validRegisterDataModel}
+                {validDataRegister}
         };
     }
 
     @Test(dataProvider = "getValidDataRegister")
-    public void testValidRegisterData(ValidRegisterDataModel data) {
+    public void testValidRegisterData(ValidDataRegister data) {
         RegisterPage registerPage = homePage.openRegisterLink(20);
         System.out.println("test cases " + data.getTestCase());
         registerPage.registerFeature(

@@ -1,25 +1,26 @@
 package login;
 
 import base.BaseTests;
-import data.login.InvalidDataModel;
+import data.loginDataModel.InvalidDataLogin;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import reader.TestDataManger;
 
 import java.util.List;
 
-public class LoginDataModelInvalidDataModelTests extends BaseTests {
+public class InvalidLoginTests extends BaseTests {
     @DataProvider
     public Object[][] getInvalidData() {
-        List<InvalidDataModel> invalidDatumModels = dataModel.getLogin().getInvalidData();
-        Object[][] data = new Object[invalidDatumModels.size()][4];
+        List<InvalidDataLogin> invalidDataLogin = TestDataManger.getLoginData().getInvalidData();
+        Object[][] data = new Object[invalidDataLogin.size()][4];
 
-        for (int i = 0; i < invalidDatumModels.size(); i++) {
-            data[i][0] = invalidDatumModels.get(i).getTestCase();
-            data[i][1] = invalidDatumModels.get(i).getEmail();
-            data[i][2] = invalidDatumModels.get(i).getPassword();
-            data[i][3] = invalidDatumModels.get(i).getExpectedMessage();
+        for (int i = 0; i < invalidDataLogin.size(); i++) {
+            data[i][0] = invalidDataLogin.get(i).getTestCase();
+            data[i][1] = invalidDataLogin.get(i).getEmail();
+            data[i][2] = invalidDataLogin.get(i).getPassword();
+            data[i][3] = invalidDataLogin.get(i).getExpectedMessage();
         }
         return data;
     }
@@ -33,7 +34,7 @@ public class LoginDataModelInvalidDataModelTests extends BaseTests {
         if (testcase.contains("Email")) {
             actualResult = loginPage.getEmailFormatErrorMessage(20);
         } else {
-            actualResult = loginPage.getGeneralErrorMessage(20);
+            actualResult = loginPage.getLoginMessageError(30);
         }
         System.out.println("Actual Result: " + actualResult);
         System.out.println("Expected Result: " + expectedMessage);
