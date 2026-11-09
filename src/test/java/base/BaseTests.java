@@ -3,10 +3,9 @@ package base;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.annotations.*;
 import pages.HomePage;
 import reader.TestDataManger;
 
@@ -17,12 +16,19 @@ public class BaseTests {
     protected HomePage homePage;
 
     @BeforeClass
-    public void setUp() throws FileNotFoundException {
+    @Parameters("browser")
+    public void setUp(String browserName) throws FileNotFoundException {
+        if (browserName.equalsIgnoreCase("chrome")) {
+            ChromeOptions options = new ChromeOptions();
+            options.setExperimentalOption("debuggerAddress", "127.0.0.1:9222");
+            options.addArguments("--headless");
+            driver = new ChromeDriver(options);
 
-
-        ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("debuggerAddress", "127.0.0.1:9222");
-        driver = new ChromeDriver(options);
+        } else if (browserName.equalsIgnoreCase("firefox")) {
+            FirefoxOptions options = new FirefoxOptions();
+            options.addArguments("--healdess");
+            driver = new FirefoxDriver(options);
+        }
     }
 
     public void returnHome() {

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="E-Commerce Automation Suite">
+    <test name="Regression Tests">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <!-- Register Tests -->
+            <class name="register.ValidRegisterTests"/>
+            <class name="register.InvalidRegisterTests"/>
+            <!-- Login Tests -->
+            <class name="login.ValidLoginTests"/>
+            <class name="login.InvalidLoginTests"/>
+            <!-- Catalog / Products Tests -->
+            <class name="catalog.DesktopTests"/>
+            <class name="catalog.ShoesTests"/>
+            <!-- Shopping Cart Tests -->
+            <class name="shoppingCart.AddItemToCartTests"/>
+            <class name="shoppingCart.ShoppingCartCountTests"/>
+
+
+        </classes>
+    </test>
+
+</suite>

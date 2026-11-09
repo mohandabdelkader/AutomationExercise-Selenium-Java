@@ -10,6 +10,6 @@ public class DesktopTests extends BaseTests {
     public void testOpenDesktopFromComputerMenu() {
         homePage.openDesktopUnderComputers(10);
         String actualTitle = driver.getTitle();
-        Assert.assertEquals(actualTitle, "Desktops", "Error: The desktop page title is incorrect!");
+        Assert.assertEquals(actualTitle, "nopCommerce demo store. Desktops", "Error: The desktop page title is incorrect!");
     }
 }

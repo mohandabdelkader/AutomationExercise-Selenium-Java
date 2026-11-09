@@ -48,5 +48,6 @@ public class HomePage extends MethodHandles {
         click(shoesLink, time);
         return new ShoesPage(driver);
     }
+   
 
 }
